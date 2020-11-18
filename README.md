@@ -1,6 +1,6 @@
 # shell:~# -- Docker/Kubernetes WebInterface Shell Access
 
-shell:~# is a very basic, single-file, PHP shell. It can be used to quickly execute commands on a server. Use it with caution: this script represents a security risk for the server.
+This is a very basic, single-file, PHP web application into a container, providing you with a shell in that container. It can be used to quickly execute commands on a server or to debug issues in kubernetes or openshift. This is handy if SSH or other methods are blocked or cumbersome, so you can have shell access though a http exposed web service.
 
 ## Features
 
