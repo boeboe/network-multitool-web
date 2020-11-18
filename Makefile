@@ -56,3 +56,9 @@ tag-latest:
 tag-version:
 	@echo 'create tag $(VERSION)'
 	docker tag $(DOCKER_ACCOUNT)/$(APP_NAME) $(DOCKER_ACCOUNT)/$(APP_NAME):$(VERSION)
+
+deploy-k8s: ## Deploy onto kubernetes
+	kubectl apply -f ./kubernetes
+
+undeploy-k8s: ## Undeploy from kubernetes
+	kubectl delete -f ./kubernetes

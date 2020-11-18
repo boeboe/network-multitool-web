@@ -1,0 +1,28 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: multitool-web
+  labels:
+    app: multitool-web
+    version: 1.0.0
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: multitool-web
+  template:
+    metadata:
+      labels:
+        app: multitool-web
+        version: 1.0.0
+    spec:
+      serviceAccountName: multitool-web
+      containers:
+        - name: multitool-web
+          image: boeboe/network-multitool-web:1.0.0
+          imagePullPolicy: Always
+          ports:
+            - name: webui
+              containerPort: 80
+---
