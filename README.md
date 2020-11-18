@@ -10,7 +10,7 @@ shell:~# is a very basic, single-file, PHP shell. It can be used to quickly exec
 * Upload a file to the server (using `upload <destination_file_name>` command)
 * Download a file from the server (using `download <file_name>` command)
 
-**NOTE:** Do not run infinate commands as the output is only showns once command returns 
+**NOTE:** Do not run infinite commands as the output is only shown once the command returns 
 
 **WARNING:** THIS SCRIPT IS A SECURITY HOLE. **DO NOT** UPLOAD IT ON A SERVER UNTIL YOU KNOW WHAT YOU ARE DOING!
 
