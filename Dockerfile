@@ -5,7 +5,8 @@ RUN apk --update add --no-cache coreutils apache2 php7-apache2 php-json sudo tcp
  && sudo mv ./kubectl /usr/local/bin/kubectl && chmod +x /usr/local/bin/kubectl \
  && curl -sL https://istio.io/downloadIstioctl | sh - && mv $HOME/.istioctl/bin/istioctl /usr/local/bin && rm -rf $HOME/.istioctl \
  && curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash \
- && addgroup apache root && echo "apache ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+ && addgroup apache root && echo "apache ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
+ && sed -i 's/index.html/shell.php/g' /etc/apache2/httpd.conf
 
 ENV LANG en_US.utf8
 ENV APACHE_RUN_DIR /var/run/apache2
