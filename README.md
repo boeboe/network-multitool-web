@@ -33,6 +33,7 @@ This is a very basic, single-file, PHP web application into a container, providi
 * mysql & postgresql client
 * jq
 * git
+* kubectl, istioctl, helm
 
 ## Usage and installation
 
@@ -62,8 +63,16 @@ This is a very basic, single-file, PHP web application into a container, providi
 
 ### Deploy onto kubernetes
 
+Using yaml files and with service account (for istio cases)
+
     $ kubectl -n default apply -f ./kubernetes
-    # open with your browser http://<node-ip>:30800/shell.php
+    # open with your browser http://<node-ip>:30080/shell.php
+
+Using direct deployment without service account
+
+    $ kubectl create deployment multitool-web --image=boeboe/network-multitool-web:1.0.0
+    $ kubectl expose deployment multitool-web --type=LoadBalancer --port=30080
+    # open with your browser http://<node-ip>:30080/shell.php
 
 ## Changelog
 
