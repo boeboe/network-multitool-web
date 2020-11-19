@@ -71,7 +71,7 @@ Using yaml files and with service account (for istio cases)
 Using direct deployment without service account
 
     $ kubectl create deployment multitool-web --image=boeboe/network-multitool-web:1.0.0
-    $ kubectl expose deployment multitool-web --type=LoadBalancer --port=30080
+    $ kubectl expose deployment multitool-web --type=LoadBalancer --port=80 --target-port=30080
     # open with your browser http://<node-ip>:30080/shell.php
 
 ## Changelog
