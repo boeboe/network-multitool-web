@@ -72,7 +72,8 @@ Using direct deployment without service account
 
     $ kubectl create deployment multitool-web --image=boeboe/network-multitool-web:1.0.0
     $ kubectl expose deployment multitool-web --type=LoadBalancer --port=30080 --target-port=80
-    # open with your browser http://<node-ip>:30080/shell.php
+    $ kubectl get svc multitool-web -o wide
+    # open with your browser http://<node-ip>:<node-port>/shell.php
 
 ## Changelog
 
